@@ -1,6 +1,7 @@
 package com.production.ruslanio.caloriescalculator.data.local.database.dao
 
 import android.arch.persistence.room.Dao
+import android.arch.persistence.room.Transaction
 import com.production.ruslanio.caloriescalculator.data.local.database.base.BaseDao
 import com.production.ruslanio.caloriescalculator.data.local.database.model.StatisticObject
 
@@ -9,4 +10,10 @@ import com.production.ruslanio.caloriescalculator.data.local.database.model.Stat
  */
 @Dao
 abstract class StatisticDao : BaseDao<StatisticObject>() {
+
+    @Transaction
+    open fun cleanAndInsert(entity: StatisticObject){
+        delete(entity)
+        insert(entity)
+    }
 }

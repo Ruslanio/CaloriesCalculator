@@ -16,9 +16,9 @@ import com.production.ruslanio.caloriescalculator.data.local.database.model.Stat
 abstract class MainDatabase : RoomDatabase() {
 
     companion object {
-        public const val DB_NAME = "calc_database";
+        const val DB_NAME = "calc_database";
 
-        public fun getInstance(context: Context) = Room.databaseBuilder(context, MainDatabase::class.java, MainDatabase.DB_NAME)
+        fun getInstance(context: Context) = Room.databaseBuilder(context, MainDatabase::class.java, MainDatabase.DB_NAME)
                 .allowMainThreadQueries() //TODO remove
                 .build()
     }

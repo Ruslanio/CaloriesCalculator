@@ -2,12 +2,16 @@ package com.production.ruslanio.caloriescalculator.data.local.database.base
 
 import android.arch.persistence.room.Delete
 import android.arch.persistence.room.Insert
+import android.arch.persistence.room.Transaction
 import android.arch.persistence.room.Update
+import java.util.Arrays.asList
 
 /**
  * Created by Ruslanio on 31.01.2018.
  */
 abstract class BaseDao<T : BaseDataObject> {
+
+
 
     @Insert
     abstract fun insert(entity : T) : Long

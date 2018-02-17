@@ -2,4 +2,16 @@
     <string name="app_name">CaloriesCalculator</string>
     <string name="add_to_daily">add to daily</string>
     <string name="add_food">add food</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="fat_percent">Fat percent</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="age">Age</string>
+    <string name="optional_data">Optional data :</string>
+    <string name="mandatory_data">Mandatory data :</string>
+    <string name="choose_target">Choose your target</string>
+    <string name="welcome">Welcome!</string>
+    <string name="greetings_to_user">Please, tell us about yourself, that we could calculate suitable programm for you.</string>
+    <string name="submit">Submit</string>
 </resources>

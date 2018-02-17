@@ -4,20 +4,20 @@ import android.arch.lifecycle.LiveData
 import android.content.Context
 import com.production.ruslanio.caloriescalculator.data.local.database.base.MainDatabase
 import com.production.ruslanio.caloriescalculator.data.local.database.model.FoodObject
+import com.production.ruslanio.caloriescalculator.data.local.database.model.StatisticObject
 import javax.inject.Inject
 
 /**
  * Created by Ruslanio on 06.02.2018.
  */
-class DBHelper {
-    lateinit var mainDatabase : MainDatabase
+class DBHelper(private var mainDatabase: MainDatabase) {
 
-    constructor(context : Context){
-        mainDatabase = MainDatabase.getInstance(context)
-    }
 
     fun getAllFoods(): LiveData<List<FoodObject>>{
         return mainDatabase.foodDao().selectAll()
     }
 
+    fun updateStatistic(statisticObject: StatisticObject){
+        mainDatabase.statisticDao().cleanAndInsert(statisticObject)
+    }
 }
